@@ -97,7 +97,7 @@ jobs:
           fi
 
       - name: Create pull request
-        if: steps.check-pr.outputs.pr_exists == 'false' && steps.check-changes.has_changes == 'true'
+        if: steps.check-pr.outputs.pr_exists == 'false' && steps.check-changes.outputs.has_changes == 'true'
         env:
           GH_TOKEN: "${{ steps.app-token.outputs.token }}"
         run: |
