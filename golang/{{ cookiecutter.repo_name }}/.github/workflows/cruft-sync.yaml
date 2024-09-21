@@ -1,3 +1,4 @@
+---
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 name: Cruft Sync
 
@@ -85,7 +86,7 @@ jobs:
         run: |
           PR_EXISTS=$(gh pr list --head cruft_update --json number | jq '. | length > 0')
           echo "pr_exists=$PR_EXISTS" | tee "$GITHUB_OUTPUT"
-        
+
       - name: Compare the current branch with the main branch
         if: check-changes
         run: |
