@@ -88,7 +88,7 @@ jobs:
           echo "pr_exists=$PR_EXISTS" | tee "$GITHUB_OUTPUT"
 
       - name: Compare the current branch with the main branch
-        if: check-changes
+        id: check-changes
         run: |
           if git diff --quiet origin/main; then
             echo "has_changes=true" | tee "$GITHUB_OUTPUT"
