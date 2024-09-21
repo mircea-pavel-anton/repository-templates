@@ -2,7 +2,6 @@
 
 {{ cookiecutter.project_description }}
 
-
 ## Contributing
 
 Contributions are welcome! Please fork the repository, make your changes, and submit a pull request.
