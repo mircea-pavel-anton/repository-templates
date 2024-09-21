@@ -1,0 +1,11 @@
+{
+    "project_name": "example-go-project",
+    "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+    "project_description": "A brief description of the Go project",
+    "author": "Your Name",
+    "go_version": "1.23.0",
+
+    "_copy_without_render": [
+        ".github/*"
+    ]
+}
