@@ -15,7 +15,7 @@ jobs:
     uses: mirceanton/reusable-workflows/.github/workflows/reusable-docker-build-push.yaml@b15f79125a97349d2f1043d1556d6e3cebae2227 # v3.4.5
     secrets: inherit
     with:
-      image: "ghcr.io/mirceanton/{{ cookiecutter.project_name }}-devcontainer"
+      image: "ghcr.io/${{ github.repository }}-devcontainer"
       platforms: linux/amd64
       tags: test
       context: ./.devcontainer
