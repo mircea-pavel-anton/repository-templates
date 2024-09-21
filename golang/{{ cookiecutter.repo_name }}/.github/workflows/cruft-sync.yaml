@@ -85,9 +85,18 @@ jobs:
         run: |
           PR_EXISTS=$(gh pr list --head cruft_update --json number | jq '. | length > 0')
           echo "pr_exists=$PR_EXISTS" | tee "$GITHUB_OUTPUT"
+        
+      - name: Compare the current branch with the main branch
+        if: check-changes
+        run: |
+          if git diff --quiet origin/main; then
+            echo "has_changes=true" | tee "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=false" | tee "$GITHUB_OUTPUT"
+          fi
 
       - name: Create pull request
-        if: steps.check-pr.outputs.pr_exists == 'false'
+        if: steps.check-pr.outputs.pr_exists == 'false' && steps.check-changes.has_changes == 'true'
         env:
           GH_TOKEN: "${{ steps.app-token.outputs.token }}"
         run: |
