@@ -2,6 +2,3 @@
 
 {{ cookiecutter.description }}
 
-## Author
-
-{{ cookiecutter.author }}
