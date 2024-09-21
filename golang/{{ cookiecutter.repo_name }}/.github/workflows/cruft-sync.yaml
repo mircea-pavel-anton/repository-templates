@@ -91,9 +91,9 @@ jobs:
         id: check-changes
         run: |
           if git diff --quiet origin/main; then
-            echo "has_changes=true" | tee "$GITHUB_OUTPUT"
-          else
             echo "has_changes=false" | tee "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=true" | tee "$GITHUB_OUTPUT"
           fi
 
       - name: Create pull request
