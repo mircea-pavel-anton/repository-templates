@@ -5,5 +5,9 @@
     "author_name": "Your Name",
     "author_email": "your.name@domain.com",
     "author_username": "yourname",
-    "description": "A brief description of the Go project"
+    "description": "A brief description of the Go project",
+
+    "_copy_without_render": [
+        ".github/*"
+    ]
 }
